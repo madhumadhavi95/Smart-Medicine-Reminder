@@ -1,0 +1,77 @@
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #36D1DC, #5B86E5, #A770EF, #FF6FD8);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+}
+
+@keyframes gradientBG{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+.container{
+    max-width:800px;
+    margin:auto;
+    background:rgba(255,255,255,0.95);
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.25);
+}
+
+h1{
+    text-align: center;
+    color: rgb(186, 97, 196);
+}
+
+input, button{
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+}
+
+button{
+    background: rgb(201, 165, 111);
+    color: rgb(154, 229, 223);
+    border: none;
+    cursor: pointer;
+}
+
+button:hover{
+    background: rgb(170, 145, 139);
+}
+
+.medicine-card{
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+
+.dashboard{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    margin:20px 0;
+}
+
+.card{
+    flex:1;
+    background:#df7aae;
+    color:white;
+    text-align:center;
+    padding:15px;
+    border-radius:10px;
+    font-weight:bold;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Medicine Reminder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+
+<h1>💊 Smart Medicine Reminder</h1>
+<div class="dashboard">
+    <div class="card">
+        <h3>Total Medicines</h3>
+        <p>{{total}}</p>
+    </div>
+
+    <div class="card">
+        <h3>Taken</h3>
+        <p>{{taken}}</p>
+    </div>
+
+    <div class="card">
+        <h3>Pending</h3>
+        <p>{{pending}}</p>
+    </div>
+</div>
+
+<form action="/add" method="POST">
+
+    <label>Medicine Name:</label><br>
+    <input type="text" name="medicine_name" required><br><br>
+
+    <label>Medicine Date:</label><br>
+    <input type="date" name="medicine_date" required><br><br>
+
+    <label>Medicine Time:</label><br>
+    <input type="time" name="medicine_time" required><br><br>
+    <button type="submit">Add Medicine</button>
+
+</form>
+
+<br><br>
+
+<h2>Medicine List</h2>
+
+<table border="1" align="center" cellpadding="10">
+
+<tr>
+    <th>ID</th>
+    <th>Medicine Name</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Status</th>
+    <th>Action</th>
+</tr>
+
+{% for medicine in medicines %}
+
+<tr>
+    <td>{{ medicine[0] }}</td>
+    <td>{{ medicine[1] }}</td>
+    <td>{{ medicine[2] }}</td>
+    <td>{{ medicine[3] }}</td>
+    <td>{{ medicine[4] }}</td>
+
+<td>
+    <a href="/taken/{{ medicine[0] }}">
+        <button>✅ Taken</button>
+    </a>
+
+    <a href="/delete/{{ medicine[0] }}">
+        <button>🗑 Delete</button>
+    </a>
+
+    <a href="/logout">
+    <button>Logout</button>
+    </a>
+</td>
+</tr>
+
+{% endfor %}
+
+</table>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</div>
+</body>
+</html>

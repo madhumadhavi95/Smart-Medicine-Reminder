@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial,sans-serif;
+        }
+
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(135deg,#4facfe,#00f2fe);
+        }
+
+        .container{
+            background:white;
+            padding:35px;
+            width:350px;
+            border-radius:15px;
+            box-shadow:0 8px 20px rgba(0,0,0,0.2);
+            text-align:center;
+        }
+
+        h2{
+            color:#1565c0;
+            margin-bottom:20px;
+        }
+
+        input{
+            width:100%;
+            padding:12px;
+            margin:10px 0;
+            border:1px solid #ccc;
+            border-radius:8px;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            background:#1565c0;
+            color:white;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        button:hover{
+            background:#0d47a1;
+        }
+
+        a{
+            text-decoration:none;
+            color:#1565c0;
+        }
+
+        p{
+            margin-top:15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>💊 Smart Medicine Reminder</h2>
+
+<form method="POST">
+
+<input type="text" name="username" placeholder="Username" required>
+
+<input type="password" name="password" placeholder="Password" required>
+
+<button type="submit">Login</button>
+
+</form>
+
+<p>Don't have an account?
+<a href="/register">Register</a></p>
+
+</div>
+
+</body>
+</html>
